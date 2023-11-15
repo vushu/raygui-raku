@@ -1,4 +1,6 @@
 lib/.precomp
-resources/
 .vscode/
 Makefile
+resources/raygui.c
+resources/raygui_modified.c
+resources/libraries/
