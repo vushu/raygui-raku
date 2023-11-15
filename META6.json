@@ -1,0 +1,51 @@
+{
+  "auth": "zef:vushu",
+  "authors": [
+    "Dan Vu (vushu)"
+  ],
+  "build-depends": [
+    "Raylib::Bindings"
+  ],
+  "depends": {
+    "build": {
+      "requires": [
+        "Distribution::Builder::MakeFromJSON",
+        {
+          "from": "bin",
+          "name": "raku"
+        }
+      ]
+    },
+    "runtime": {
+      "requires": [
+        {
+          "from": "bin",
+          "name": "raku"
+        }
+      ]
+    }
+  },
+  "description": "Raygui bindings for raku, using grammar to parse raygui.h and auto generate the bindings",
+  "license": "Artistic-2.0",
+  "name": "Raygui::Bindings",
+  "provides": {
+    "Raygui::Bindings": "lib/Raygui/Bindings.rakumod"
+  },
+  "resources": [
+    "libraries/raygui"
+  ],
+  "test-depends": [],
+  "version": "0.0.1",
+  "source-url": "https://github.com/vushu/raygui-raku.git",
+  "builder": "Distribution::Builder::MakeFromJSON",
+  "build": {
+    "makefile-variables": {
+      "rakuopts": {
+        "run": [
+          "raku",
+          "configure.raku"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+use Test;
+use lib 'lib';
+
+plan 3;
+use Raygui::Grammar;
+use Raygui::Actions;
+use-ok "Raygui::Grammar";
+use-ok "Raygui::Actions";
+
+
+my $source = slurp "resources/raygui.c";
+my $parser = Grammar.new;
+my $actions = Actions.new;
+$actions.library-name = "LIBRAYGUI";
+
+ok $parser.parse($source, actions => $actions), "Succesfully parsed raygui.c";
+
+done-testing;

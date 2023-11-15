@@ -1,0 +1,28 @@
+.PHONY: clean test
+CC = %CC%
+RAKU = %EXECUTABLE%
+LINUX_FLAGS =-shared $$(pkg-config --libs --cflags raylib) -fpic -DRAYGUI_IMPLEMENTATION  -lGL -lm -lpthread -ldl -lrt -lX11
+MACOS_FLAGS=-shared -fpic -DRAYGUI_IMPLEMENTATION -framework OpenGL -lm -lpthread -ldl $$(pkg-config --libs --cflags raylib)
+
+OS := $(shell uname)
+
+all: 
+	@echo "Building for $(OS)"
+	@if [ "$(OS)" = "Linux" ]; then	\
+    	$(MAKE) raygui-raku-linux; \
+	elif [ "$(OS)" = "Darwin" ]; then	\
+    	$(MAKE) raygui-raku-macos; \
+	else \
+    	echo "Unsupported operating system: $(OS)"; \
+    fi
+
+raygui-raku-linux:
+	$(CC) $(LINUX_FLAGS) resources/raygui_modified.c -o resources/libraries/libraygui.so
+
+raygui-raku-macos:
+	$(CC) $(MACOS_FLAGS) resources/raygui_modified.c -o resources/libraries/libraygui.dynlib
+
+
+
+install:
+	$(RAKU) configure.raku --install
