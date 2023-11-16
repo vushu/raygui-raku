@@ -35,7 +35,7 @@
     "libraries/raygui"
   ],
   "test-depends": [],
-  "version": "0.0.3",
+  "version": "0.0.4",
   "source-url": "https://github.com/vushu/raygui-raku.git",
   "builder": "Distribution::Builder::MakeFromJSON",
   "build": {
