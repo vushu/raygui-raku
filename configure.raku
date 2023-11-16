@@ -28,7 +28,7 @@ sub configure{
         check-if-installed;
     }
     say "Downloading raygui from repository...";
-    my $result = shell("wget $url -O resources/raygui.h");
+    my $result = shell("curl $url > resources/raygui.h");
     shell("cp resources/raygui.h resources/raygui_modified.c");
     say $raylib-h-file;
     my $srcdir = $*CWD;

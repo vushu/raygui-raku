@@ -20,7 +20,7 @@ raygui-raku-linux:
 	$(CC) $(LINUX_FLAGS) resources/raygui_modified.c -o resources/libraries/libraygui.so
 
 raygui-raku-macos:
-	$(CC) $(MACOS_FLAGS) resources/raygui_modified.c -o resources/libraries/libraygui.dynlib
+	$(CC) $(MACOS_FLAGS) resources/raygui_modified.c -o resources/libraries/libraygui.dylib
 
 
 
