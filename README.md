@@ -8,11 +8,9 @@ to support pass as pointer meaning we are `"pointerizing"` the functions. This i
 The bindings are also converted to `kebab-case` to fit Raku code style.
 
 #### On installation: 
-- `raygui.h` will be downloaded from https://github.com/raysan5/raygui/blob/master/src/raygui.h and build
+- `raygui.h` will be downloaded from https://github.com/raysan5/raygui/blob/master/src/raygui.h and build with  
+    generated pointerization and allocation c code.
 - `Bindings.rakumod` will be generated and placed into lib/Raygui 
-- The pointerization and allocation C code gets compiled to be used by Raygui::Bindings.
-
-Raygui::Bindings comes with support for malloc-ing Raygui structs, 
 
 ### Dependencies
 ```

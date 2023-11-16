@@ -1,4 +1,3 @@
-use Grammar::Tracer;
 grammar Grammar {
     token TOP {
         [ <defined-content> ]*

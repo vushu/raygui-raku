@@ -8,11 +8,11 @@ use-ok "Raygui::Grammar";
 use-ok "Raygui::Actions";
 
 
-my $source = slurp "resources/raygui.c";
+my $source = slurp "resources/raygui.h";
 my $parser = Grammar.new;
 my $actions = Actions.new;
 $actions.library-name = "LIBRAYGUI";
 
-ok $parser.parse($source, actions => $actions), "Succesfully parsed raygui.c";
+ok $parser.parse($source, actions => $actions), "Succesfully parsed raygui.h";
 
 done-testing;

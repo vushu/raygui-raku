@@ -13,7 +13,7 @@ sub check-if-installed {
 }
 
 sub configure{
-    my $raylib-h-file = "resources/raygui.c";
+    my $raylib-h-file = "resources/raygui.h";
     my $library_name = 'raygui';
 
     if $*DISTRO.name ~~ /window/ {
@@ -28,8 +28,8 @@ sub configure{
         check-if-installed;
     }
     say "Downloading raygui from repository...";
-    my $result = shell("wget $url -O resources/raygui.c");
-    shell("cp resources/raygui.c resources/raygui_modified.c");
+    my $result = shell("wget $url -O resources/raygui.h");
+    shell("cp resources/raygui.h resources/raygui_modified.c");
     say $raylib-h-file;
     my $srcdir = $*CWD;
     my $output-dir="$srcdir/resources";
