@@ -72,61 +72,61 @@ enum GuiControlProperty is export (
 );
 enum GuiDefaultProperty is export (
     TEXT_SIZE => 16,
-    TEXT_SPACING => 1,
-    LINE_COLOR => 2,
-    BACKGROUND_COLOR => 3,
-    TEXT_LINE_SPACING => 4,
-    TEXT_ALIGNMENT_VERTICAL => 5,
-    TEXT_WRAP_MODE => 6,
+    TEXT_SPACING => 17,
+    LINE_COLOR => 18,
+    BACKGROUND_COLOR => 19,
+    TEXT_LINE_SPACING => 20,
+    TEXT_ALIGNMENT_VERTICAL => 21,
+    TEXT_WRAP_MODE => 22,
 );
 enum GuiToggleProperty is export (
     GROUP_PADDING => 16,
 );
 enum GuiSliderProperty is export (
     SLIDER_WIDTH => 16,
-    SLIDER_PADDING => 1,
+    SLIDER_PADDING => 17,
 );
 enum GuiProgressBarProperty is export (
     PROGRESS_PADDING => 16,
 );
 enum GuiScrollBarProperty is export (
     ARROWS_SIZE => 16,
-    ARROWS_VISIBLE => 1,
-    SCROLL_SLIDER_PADDING => 2,
-    SCROLL_SLIDER_SIZE => 3,
-    SCROLL_PADDING => 4,
-    SCROLL_SPEED => 5,
+    ARROWS_VISIBLE => 17,
+    SCROLL_SLIDER_PADDING => 18,
+    SCROLL_SLIDER_SIZE => 19,
+    SCROLL_PADDING => 20,
+    SCROLL_SPEED => 21,
 );
 enum GuiCheckBoxProperty is export (
     CHECK_PADDING => 16,
 );
 enum GuiComboBoxProperty is export (
     COMBO_BUTTON_WIDTH => 16,
-    COMBO_BUTTON_SPACING => 1,
+    COMBO_BUTTON_SPACING => 17,
 );
 enum GuiDropdownBoxProperty is export (
     ARROW_PADDING => 16,
-    DROPDOWN_ITEMS_SPACING => 1,
+    DROPDOWN_ITEMS_SPACING => 17,
 );
 enum GuiTextBoxProperty is export (
     TEXT_READONLY => 16,
 );
 enum GuiSpinnerProperty is export (
     SPIN_BUTTON_WIDTH => 16,
-    SPIN_BUTTON_SPACING => 1,
+    SPIN_BUTTON_SPACING => 17,
 );
 enum GuiListViewProperty is export (
     LIST_ITEMS_HEIGHT => 16,
-    LIST_ITEMS_SPACING => 1,
-    SCROLLBAR_WIDTH => 2,
-    SCROLLBAR_SIDE => 3,
+    LIST_ITEMS_SPACING => 17,
+    SCROLLBAR_WIDTH => 18,
+    SCROLLBAR_SIDE => 19,
 );
 enum GuiColorPickerProperty is export (
     COLOR_SELECTOR_SIZE => 16,
-    HUEBAR_WIDTH => 1,
-    HUEBAR_PADDING => 2,
-    HUEBAR_SELECTOR_HEIGHT => 3,
-    HUEBAR_SELECTOR_OVERFLOW => 4,
+    HUEBAR_WIDTH => 17,
+    HUEBAR_PADDING => 18,
+    HUEBAR_SELECTOR_HEIGHT => 19,
+    HUEBAR_SELECTOR_OVERFLOW => 20,
 );
 our sub term:<gui-enable> () is export is native(LIBRAYGUI) is symbol('GuiEnable'){ * }
 our sub term:<gui-disable> () is export is native(LIBRAYGUI) is symbol('GuiDisable'){ * }
