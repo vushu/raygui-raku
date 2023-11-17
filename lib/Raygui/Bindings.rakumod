@@ -1,5 +1,5 @@
 # This Raku module is generated from raygui.h
-unit module Raygui::Bindings:ver<0.0.4>:auth<zef:vushu>;
+unit module Raygui::Bindings:ver<0.0.5>:auth<zef:vushu>;
 use Raylib::Bindings;
 use NativeCall;
 constant LIBRAYGUI = %?RESOURCES<libraries/raygui>;

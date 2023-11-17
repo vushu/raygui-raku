@@ -14,7 +14,7 @@ sub generate-bindings($raygui-h-file, $output-dir) is export {
 
     my $file  = open "lib/Raygui/Bindings.rakumod", :w;
     $file.say(generation-message);
-    $file.say("unit module Raygui::Bindings:ver<0.0.4>:auth<zef:vushu>;");
+    $file.say("unit module Raygui::Bindings:ver<0.0.5>:auth<zef:vushu>;");
     $file.say("use Raylib::Bindings;");
     $file.say("use NativeCall;");
     $file.say("constant LIBRAYGUI = %\?RESOURCES<libraries/raygui>;");
