@@ -1,5 +1,5 @@
 # This Raku module is generated from raygui.h
-unit module Raygui::Bindings:ver<0.0.5>:auth<zef:vushu>;
+unit module Raygui::Bindings:ver<0.0.6>:auth<zef:vushu>;
 use Raylib::Bindings;
 use NativeCall;
 constant LIBRAYGUI = %?RESOURCES<libraries/raygui>;
@@ -426,7 +426,7 @@ our sub gui-combo-box (Rectangle $bounds, Str $text, int32 $active is rw, ) retu
 our sub gui-dropdown-box (Rectangle $bounds, Str $text, int32 $active is rw, bool $editMode) returns int32 is export is native(LIBRAYGUI) is symbol('GuiDropdownBox_pointerized'){ * }
 our sub gui-spinner (Rectangle $bounds, Str $text, int32 $value is rw, int32 $minValue, int32 $maxValue, bool $editMode) returns int32 is export is native(LIBRAYGUI) is symbol('GuiSpinner_pointerized'){ * }
 our sub gui-value-box (Rectangle $bounds, Str $text, int32 $value is rw, int32 $minValue, int32 $maxValue, bool $editMode) returns int32 is export is native(LIBRAYGUI) is symbol('GuiValueBox_pointerized'){ * }
-our sub gui-text-box (Rectangle $bounds, Str $text, int32 $textSize, bool $editMode) returns int32 is export is native(LIBRAYGUI) is symbol('GuiTextBox_pointerized'){ * }
+our sub gui-text-box (Rectangle $bounds, CArray[uint8] $text, int32 $textSize, bool $editMode) returns int32 is export is native(LIBRAYGUI) is symbol('GuiTextBox_pointerized'){ * }
 our sub gui-slider (Rectangle $bounds, Str $textLeft, Str $textRight, num32 $value is rw, num32 $minValue, num32 $maxValue) returns int32 is export is native(LIBRAYGUI) is symbol('GuiSlider_pointerized'){ * }
 our sub gui-slider-bar (Rectangle $bounds, Str $textLeft, Str $textRight, num32 $value is rw, num32 $minValue, num32 $maxValue) returns int32 is export is native(LIBRAYGUI) is symbol('GuiSliderBar_pointerized'){ * }
 our sub gui-progress-bar (Rectangle $bounds, Str $textLeft, Str $textRight, num32 $value is rw, num32 $minValue, num32 $maxValue) returns int32 is export is native(LIBRAYGUI) is symbol('GuiProgressBar_pointerized'){ * }
@@ -436,7 +436,7 @@ our sub gui-grid (Rectangle $bounds, Str $text, num32 $spacing, int32 $subdivs, 
 our sub gui-list-view (Rectangle $bounds, Str $text, int32 $scrollIndex is rw, int32 $active is rw, ) returns int32 is export is native(LIBRAYGUI) is symbol('GuiListView_pointerized'){ * }
 our sub gui-list-view-ex (Rectangle $bounds, Str $text, int32 $count, int32 $scrollIndex is rw, int32 $active is rw, int32 $focus is rw, ) returns int32 is export is native(LIBRAYGUI) is symbol('GuiListViewEx_pointerized'){ * }
 our sub gui-message-box (Rectangle $bounds, Str $title, Str $message, Str $buttons) returns int32 is export is native(LIBRAYGUI) is symbol('GuiMessageBox_pointerized'){ * }
-our sub gui-text-input-box (Rectangle $bounds, Str $title, Str $message, Str $buttons, Str $text, int32 $textMaxSize, bool $secretViewActive is rw) returns int32 is export is native(LIBRAYGUI) is symbol('GuiTextInputBox_pointerized'){ * }
+our sub gui-text-input-box (Rectangle $bounds, Str $title, Str $message, Str $buttons, CArray[uint8] $text, int32 $textMaxSize, bool $secretViewActive is rw) returns int32 is export is native(LIBRAYGUI) is symbol('GuiTextInputBox_pointerized'){ * }
 our sub gui-color-picker (Rectangle $bounds, Str $text, Color $color is rw) returns int32 is export is native(LIBRAYGUI) is symbol('GuiColorPicker_pointerized'){ * }
 our sub gui-color-panel (Rectangle $bounds, Str $text, Color $color is rw) returns int32 is export is native(LIBRAYGUI) is symbol('GuiColorPanel_pointerized'){ * }
 our sub gui-color-bar-alpha (Rectangle $bounds, Str $text, num32 $alpha is rw) returns int32 is export is native(LIBRAYGUI) is symbol('GuiColorBarAlpha_pointerized'){ * }

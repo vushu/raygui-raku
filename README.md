@@ -33,6 +33,15 @@ zef install .
 raku examples/portable-window.raku
 ```
 
+### Mutable strings
+Some functions in raygui requires a mutable string so we can't parse a normal Raku `Str` since they are immutable.
+Please parse a `CArray[uint8]` for these cases, it's important to encode it as `utf-8`.
+Example:
+```
+my $text = CArray[uint8].new("Foo".encode('utf-8'));
+gui-text-box($message-box-rect, $text, 3, True)
+```
+
 #### More info  
 https://github.com/raysan5/raygui
 
