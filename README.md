@@ -38,8 +38,11 @@ Some functions in raygui requires a mutable string so we can't parse a normal Ra
 Please parse a `CArray[uint8]` for these cases, it's important to encode it as `utf-8`.
 Example:
 ```
-my $text = CArray[uint8].new("Foo".encode('utf-8'));
-gui-text-box($message-box-rect, $text, 3, True)
+# .encode takes care of UTF-8 encoding. If $array is used 
+# as a string by the native function, don't forget to append the 
+# NULL byte that terminates a C string: --------v 
+my $text = CArray[uint8].new("Foo".encode.list, 0);
+gui-text-box($message-box-rect, $text, 32, True)
 ```
 
 #### More info  
