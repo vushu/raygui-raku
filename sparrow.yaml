@@ -1,0 +1,40 @@
+image:
+  - melezhik/sparrow:alpine_arm
+  #- melezhik/sparrow:debian_arm
+  - melezhik/sparrow:ubuntu_arm
+
+tasks:
+  -
+    name: main
+    default: true
+    language: Bash
+    code: |
+      set -e
+      cd source/
+      zef install .
+      zef test .
+    depends:
+      -
+        name: system_deps
+  -
+    name: system_deps
+    language: Bash
+    code: |
+      set -e
+      if test $os = "alpine"; then
+        sudo apk add --repository=http://dl-cdn.alpinelinux.org/alpine/edge/testing/ raylib-dev
+      elif test $os = "debian"; then
+        echo "debian install is not yet supported"
+      elif test $os = "ubuntu"; then
+        sudo apt-get update -y 1>/dev/null
+        sudo apt install build-essential -y 1>/dev/null
+        sudo apt install libasound2-dev libx11-dev libxrandr-dev \
+        libxi-dev libgl1-mesa-dev libglu1-mesa-dev libxcursor-dev \
+        libxinerama-dev -y 1>/dev/null
+        mkdir -p .dist && cd .dist
+        git clone https://github.com/raysan5/raylib.git
+        cd raylib/src
+        make PLATFORM=PLATFORM_DESKTOP # To make the static version.
+        make PLATFORM=PLATFORM_DESKTOP RAYLIB_LIBTYPE=SHARED # To make the dynamic shared version.
+        sudo make install
+      fi      
